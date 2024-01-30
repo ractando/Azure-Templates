@@ -2,10 +2,6 @@ param location string = resourceGroup().location
 
 param deploymentName string = 'flytzen-mealie'
 
-// TODO: https://stackoverflow.com/questions/53226642/sqlite3-database-is-locked-in-azure
-// https://github.com/MicrosoftDocs/azure-docs/issues/82464
-// https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/mountoptions-settings-azure-files
-
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: '${replace(deploymentName, '-','')}sa'
   location: location
